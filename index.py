@@ -1,6 +1,6 @@
 from tkinter import *
 import os
-import diabetes_gui as db
+
  
 creds = 'tempfile.temp'
 
@@ -68,13 +68,9 @@ def Login():
 	rootA.mainloop()
 
 def Diabetes():
-        rd = Tk()	
-        rd.title('D:')
-        rd.geometry('200x100')
-        rdbl = Label(rd, text='Here you will enter details')
-        rdbl.pack()
-        db.diebetes()
-        rd.mainloop()
+        import diabetes_gui
+        
+        
 
 def Cancer():
         rdc = Tk()	
@@ -105,7 +101,7 @@ def CheckLogin():
 		r.geometry('200x100')
 		rlbl = Label(r, text='\n[! Invalid Login')
 		rlbl.pack()
-		r.mainloop()	
+		r.mainloop()
 
 def DelUser():
 	os.remove(creds)
