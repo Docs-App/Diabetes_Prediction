@@ -16,7 +16,7 @@ def pr(preg,glu,blood,skin,ins,bmi,pdf,age):
     l=pd.DataFrame((np.array([preg,glu,blood,skin,ins,bmi,pdf,age])).reshape(1,-1))
     a=model.predict(l)
     a=int(a)
-    if a==0:
-        return "No"
+    if a<=0.5:
+        return 0
     else:
-        return "Yes"
+        return 1
